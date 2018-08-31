@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bab7b7"
+    >
+
+
+    <ImageView
+        android:id="@+id/photoId"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/himitsu"
+
+
+        />
+
+    <TextView
+        android:id="@+id/nameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/photoId"
+        android:background="#8c8f91"
+        android:text="Maki"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detailId"
+        android:layout_width="match_parent"
+        android:text="Details"
+        android:layout_toRightOf="@+id/photoId"
+        android:layout_below="@id/nameId"
+        android:textSize="28dp"
+        android:background="#a4a4a4"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
