@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
 
    private int[] images = {R.drawable.himitsu,R.drawable.lalouch,R.drawable.tua,R.drawable.johan};
+
     private String[] actors = {"Maki Tsuyoshi","Lalouch Britania","Tokuchi Toua","Johan Liebert"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
 
         listView = findViewById(R.id.listViewId);
-        customAdapter adapter = new customAdapter(this,actors,images);
+        customAdapter adapter= new customAdapter(this,actors,images);
         listView.setAdapter(adapter);
 
     }

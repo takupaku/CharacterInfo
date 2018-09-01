@@ -12,7 +12,9 @@ public class DetailActivity extends AppCompatActivity {
     ImageView imageView;
 
     private int photoid;
+
     private String name;
+    int[] act = {R.drawable.maki_details,R.drawable.lalouch_details,R.drawable.toua_details,R.drawable.johan_details};
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -27,24 +29,33 @@ public class DetailActivity extends AppCompatActivity {
         imageView = findViewById(R.id.detailViewingId);
         textView1 = findViewById(R.id.headlineId);
         textView2 = findViewById(R.id.detailviewId);
+
     }
 
     private void loadData() {
         name = getIntent().getExtras().getString("names");
-        photoid = getIntent().getExtras().getInt("photo");
 
-        imageView.setImageResource(photoid);
+       // photoid = getIntent().getExtras().getInt("photo");
+
+
         textView1.setText(name);
 
         if(name.equalsIgnoreCase("Maki Tsuyoshi"))
         {
             String know = getResources().getString(R.string.maki);
             textView2.setText(know);
+            photoid=act[0];
+            imageView.setImageResource(photoid);
+
+
+
         }
        else if(name.equalsIgnoreCase("Lalouch Britania"))
         {
             String know = getResources().getString(R.string.lalouch);
             textView2.setText(know);
+            photoid=act[1];
+            imageView.setImageResource(photoid);
 
 
         }
@@ -52,12 +63,17 @@ public class DetailActivity extends AppCompatActivity {
         else if (name.equalsIgnoreCase("Tokuchi Toua")){
             String know = getResources().getString(R.string.toua);
             textView2.setText(know);
+            photoid=act[2];
+            imageView.setImageResource(photoid);
 
         }
 
         else if (name.equalsIgnoreCase("Johan Liebert")){
             String know = getResources().getString(R.string.johan);
             textView2.setText(know);
+            photoid=act[3];
+            imageView.setImageResource(photoid);
+
 
         }
 

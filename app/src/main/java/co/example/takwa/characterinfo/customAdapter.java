@@ -24,6 +24,7 @@ public class customAdapter extends BaseAdapter {
         this.images = images;
     }
 
+
     @Override
     public int getCount() {
         return names.length;
@@ -44,16 +45,18 @@ public class customAdapter extends BaseAdapter {
 
         if(convertView ==null){
             layoutInflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            layoutInflater.inflate(R.layout.custom_row,parent,false);
+            convertView = layoutInflater.inflate(R.layout.custom_row,null);
 
         }
-       
 
-        ImageView photo =(ImageView) convertView.findViewById(R.id.photoId);
-        TextView name=(TextView) convertView.findViewById(R.id.nameId);
-        TextView viewdetails= (TextView) convertView.findViewById(R.id.detailId);
+
+        ImageView photo = convertView.findViewById(R.id.photoId);
+        TextView name= convertView.findViewById(R.id.nameId);
+        TextView viewdetails= convertView.findViewById(R.id.detailId);
+
 
         photo.setImageResource(images[position]);
+        name.setText(names[position]);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +74,7 @@ public class customAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Intent intent= new Intent(context,DetailActivity.class);
                 intent.putExtra("names",names[position]);
+
                 context.startActivity(intent);
 
 
@@ -79,4 +83,6 @@ public class customAdapter extends BaseAdapter {
 
         return convertView;
     }
-}
+
+    }
+
